@@ -1,29 +1,17 @@
 import { Injectable } from '@nestjs/common';
 import { Album } from './album.mode';
+import { PrismaService } from './prisma.service';
 
 @Injectable()
 export class AlbumsService {
-  private albums: Album[] = [
-    {
-      id: 1,
-      title: 'test1',
-    },
-    {
-      id: 2,
-      title: 'test2',
-    },
-    {
-      id: 3,
-      title: 'test3',
-    },
-  ];
+  constructor(private readonly prismService: PrismaService) {}
 
   async findAll() {
-    return this.albums;
+    return await this.prismService.album.findMany({});
   }
 
-  async create(album: Album) {
-    this.albums.push(album);
-    return this.albums;
-  }
+  // async create(album: Album) {
+  //   this.albums.push(album);
+  //   return this.albums;
+  // }
 }

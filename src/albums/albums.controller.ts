@@ -11,8 +11,8 @@ export class AlbumsController {
     return await this.albumsService.findAll();
   }
 
-  @Post()
-  async create(@Body() createDTO: Album) {
-    return await this.albumsService.create(createDTO);
-  }
+  // @Post()
+  // async create(@Body() createDTO: Album) {
+  //   return await this.albumsService.create(createDTO);
+  // }
 }
