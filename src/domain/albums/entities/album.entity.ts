@@ -1,6 +1,6 @@
-import { IEntity } from 'src/domain/shared/IEntity';
+import { BaseEntity } from 'src/domain/shared';
 
-export class Album implements IEntity {
+export class Album implements BaseEntity {
   private readonly id: number;
   private title: string;
 
@@ -17,7 +17,7 @@ export class Album implements IEntity {
     return this.title;
   }
 
-  equals(entity: IEntity): boolean {
+  equals(entity: BaseEntity): boolean {
     if (!(entity instanceof Album)) return false;
 
     return this.id === entity.id;
