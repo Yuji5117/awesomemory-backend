@@ -1,8 +1,8 @@
-import { UsersUseCases } from '@/use-cases/users/users.use-cases';
+import { UsersUseCases } from '@/use-cases/users';
 import { Module } from '@nestjs/common';
 
 @Module({
   providers: [UsersUseCases],
   exports: [UsersUseCases],
 })
-export class AuthModule {}
+export class UsersModule {}

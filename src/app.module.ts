@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { AlbumsModule } from './infrastructure/databases/ioc/albums.module';
+import { AlbumsModule, AuthModule } from './infrastructure/databases/ioc';
 
 @Module({
-  imports: [AlbumsModule],
+  imports: [AlbumsModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
